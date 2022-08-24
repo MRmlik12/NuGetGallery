@@ -1,14 +1,12 @@
-﻿using NuGet.Client;
-using NuGet.ContentModel;
-using NuGet.Frameworks;
-using NuGet.Packaging;
-using NuGet.Packaging.Core;
-using NuGet.RuntimeModel;
-using NuGetGallery;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using NuGet.Client;
+using NuGet.ContentModel;
+using NuGet.Frameworks;
+using NuGet.Packaging.Core;
+using NuGet.RuntimeModel;
 
 namespace NuGetGallery
 {
