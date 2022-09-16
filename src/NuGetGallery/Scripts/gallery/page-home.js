@@ -100,6 +100,48 @@ $(function () {
             viewModel.uniquePackages() + ' unique package' + (viewModel.uniquePackages() != 1 ? 's' : '') + '.';
     });
 
+    //// Advay Test
+    const framework = document.querySelector('.select_all');
+    const tfms = document.querySelectorAll('.select_one');
+
+    framework.addEventListener('click', function () {
+        if (($(this).indeterminate == true) || ($(this).checked == true)) {
+            tfms.forEach((tfm) => {
+                tfm.checked = false;
+            });
+            $(this).indeterminate = false;
+            $(this).checked = false;
+        } else {
+            tfms.forEach((tfm) => {
+                tfm.checked = false;
+            });
+            $(this).indeterminate = false;
+            $(this).checked = true;
+        }
+    });
+
+    for (const tfm of tfms) {
+        tfm.addEventListener('click', updateDisplay);
+    }
+
+    function updateDisplay() {
+        let checkedCount = 0;
+        for (const tfm of tfms) {
+            if (tfm.checked) {
+                checkedCount++;
+            }
+        }
+
+        if (checkedCount === 0) {
+            framework.checked = false;
+            framework.indeterminate = false;
+        } else {
+            framework.checked = false;
+            framework.indeterminate = true;
+        }
+    }
+    //// Advay Test
+
     function showModal() {
         $("#popUpModal").modal({
             show: true,
